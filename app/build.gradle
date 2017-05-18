@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'de.felixschulze.gradle.hockeyapp'
 apply plugin: 'realm-android'
+apply plugin: 'io.fabric'
 
 apply from: "${rootProject.getRootDir()}/config/quality/quality.gradle"
 apply from: "${rootProject.getRootDir()}/jacoco.gradle"
