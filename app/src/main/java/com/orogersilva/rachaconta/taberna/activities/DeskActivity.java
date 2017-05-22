@@ -12,11 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
 import com.orogersilva.rachaconta.taberna.R;
 import com.orogersilva.rachaconta.taberna.adapters.FriendsAdapter;
 import com.orogersilva.rachaconta.taberna.dialogs.InputAddFriendDialog;
 import com.orogersilva.rachaconta.taberna.model.Friend;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,7 @@ public class DeskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_desk);
 
         mFriendsRecyclerView = (RecyclerView) findViewById(R.id.friends_recyclerview);
