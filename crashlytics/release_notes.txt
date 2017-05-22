@@ -1,1 +1,1 @@
-* Melhoria de performance e bugfixes.
+* Melhoria de performance e bugfixes by Jeremy

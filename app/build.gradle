@@ -24,7 +24,7 @@ apply from: "${rootProject.getRootDir()}/jacoco.gradle"
 // Versioning information
 def versionMajor = 0
 def versionMinor = 3
-def versionPatch = 7
+def versionPatch = 8
 
 android {
 
@@ -34,7 +34,7 @@ android {
     defaultConfig {
 
         applicationId "com.orogersilva.rachaconta.taberna"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch * 1
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
@@ -55,15 +55,17 @@ android {
 
     buildTypes {
 
+        debug{
+            ext.betaDistributionGroupAliasesFilePath="${rootProject.getRootDir()}/crashlytics/group_aliases.txt"
+            ext.betaDistributionReleaseNotesFilePath="${rootProject.getRootDir()}/crashlytics/release_notes.txt"
+        }
+
         release {
 
             signingConfig signingConfigs.release
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-            ext.betaDistributionGroupAliasesFilePath="${rootProject.getRootDir()}/crashlytics/group_aliases.txt"
-            ext.betaDistributionReleaseNotesFilePath="${rootProject.getRootDir()}/crashlytics/release_notes.txt"
         }
     }
 
