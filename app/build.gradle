@@ -46,7 +46,7 @@ android {
 
         release {
 
-            storeFile rootProject.file('rachaconta.jks')
+            storeFile rootProject.file('android.jks')
             storePassword System.getenv("KEYSTORE_PASSWORD")
             keyAlias System.getenv("ALIAS_NAME")
             keyPassword System.getenv("ALIAS_PASSWORD")
